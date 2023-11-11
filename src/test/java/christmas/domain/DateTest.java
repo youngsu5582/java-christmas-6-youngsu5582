@@ -1,4 +1,4 @@
-package christmas.util;
+package christmas.domain;
 
 import christmas.domain.Date;
 import christmas.exception.DateException;
