@@ -21,12 +21,11 @@ public class WeekendDiscountEventTest {
     }
     @Test
     @DisplayName("주말에는 메인 디쉬 개수 * 할인 금액 만큼 할인 받는다.")
-    void WeekendCaseAndOrerMainDish(){
+    void WeekendCaseAndOrderMainDish(){
         Date date = Date.of(8);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("크리스마스파스타-3"));
 
         Bill bill = Bill.of(requestOrderList);
-        WeekendDiscountEvent event = new WeekendDiscountEvent();
         Assertions.assertTrue(event.checkCondition(date));
         Assertions.assertEquals(EventConstant.WEEKEND_DISCOUNT_PRICE*3,event.provideReward(bill));
     }
@@ -36,7 +35,6 @@ public class WeekendDiscountEventTest {
         Date date = Date.of(8);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("아이스크림-2"));
         Bill bill = Bill.of(requestOrderList);
-        WeekendDiscountEvent event = new WeekendDiscountEvent();
         Assertions.assertTrue(event.checkCondition(date));
         Assertions.assertEquals(0,event.provideReward(bill));
     }
