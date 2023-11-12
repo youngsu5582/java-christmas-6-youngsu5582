@@ -3,14 +3,18 @@ package christmas.domain;
 import christmas.exception.DayOfWeekException;
 import christmas.exception.message.DayOfWeekExceptionMessage;
 
+import java.util.List;
+
 public enum DayOfWeek {
     MONDAY(0),
-    TUSEDAY(1),
+    TUESDAY(1),
     WEDNESDAY(2),
     THURSDAY(3),
     FRIDAY(4),
     SATURDAY(5),
     SUNDAY(6);
+    public static List<DayOfWeek> weekendList = List.of(FRIDAY, SATURDAY);
+    public static List<DayOfWeek> weekdayList = List.of(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY);
 
     public static DayOfWeek fromValue(int value) {
         for (DayOfWeek day : DayOfWeek.values()) {
@@ -19,6 +23,20 @@ public enum DayOfWeek {
             }
         }
         throw new DayOfWeekException(DayOfWeekExceptionMessage.INVALID_VALUE);
+    }
+
+    public boolean isWeekend() {
+        if (weekendList.contains(this)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isWeekday() {
+        if (weekdayList.contains(this)) {
+            return true;
+        }
+        return false;
     }
 
     int value;
