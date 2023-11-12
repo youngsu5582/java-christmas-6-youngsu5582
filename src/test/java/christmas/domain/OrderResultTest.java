@@ -29,6 +29,6 @@ public class OrderResultTest {
         int amountCount = 4;
         assertThatThrownBy(()->OrderResult.of(orderName,amountCount))
                 .isInstanceOf(OrderException.class)
-                .hasMessageContaining(OrderExceptionMessage.DUPLICATE_MENU.getMessage());
+                .hasMessageContaining(OrderExceptionMessage.NOT_EXIST_MENU.getMessage());
     }
 }
