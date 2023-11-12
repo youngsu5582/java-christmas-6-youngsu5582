@@ -20,7 +20,7 @@ public class MenuCatalog {
 
     private static Menu serachFromMenuWithMenuNameAndCategory(String menuName, Category category) {
         for (MenuItem menu : category.getItemsInCategory()) {
-            if (menu.getName() == menuName) {
+            if (menu.getName().equals(menuName)) {
                 return menu.get();
             }
         }
