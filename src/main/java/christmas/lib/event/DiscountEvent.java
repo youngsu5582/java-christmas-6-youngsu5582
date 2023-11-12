@@ -1,9 +1,11 @@
 package christmas.lib.event;
 
+
 import christmas.domain.Date;
 
-public abstract class DiscountEvent extends Event{
+public abstract class DiscountEvent<T> extends Event<Date, T> {
 
     public abstract boolean checkCondition(Date date);
-    public abstract Object provideReward(Object object);
+
+    public abstract Object provideReward(T object);
 }
