@@ -14,13 +14,27 @@ public class Reward {
         this.discountRewards = new ArrayList<>();
         this.presentRewards = new ArrayList<>();
         for (EventReward eventReward : eventRewards) {
-            if (eventReward instanceof DiscountEventReward) {
-                discountRewards.add((DiscountEventReward) eventReward);
-            }
-            if (eventReward instanceof PresentEventReward) {
-                presentRewards.add((PresentEventReward) eventReward);
-            }
+            processEventReward(eventReward);
         }
+    }
+
+    private void processEventReward(EventReward eventReward) {
+        if (eventReward instanceof DiscountEventReward) {
+            processDiscountEventReward((DiscountEventReward) eventReward);
+        }
+        if (eventReward instanceof PresentEventReward) {
+            processPresentEventReward((PresentEventReward) eventReward);
+        }
+    }
+
+    private void processDiscountEventReward(DiscountEventReward discountReward) {
+        if (discountReward.discountPrice() != 0) {
+            discountRewards.add(discountReward);
+        }
+    }
+
+    private void processPresentEventReward(PresentEventReward presentReward) {
+        presentRewards.add(presentReward);
     }
 
     public RewardDto toDto() {

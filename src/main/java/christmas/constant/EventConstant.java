@@ -4,6 +4,8 @@ import christmas.domain.category.Drink;
 import christmas.domain.menu.Menu;
 
 public interface EventConstant {
+    public static final Integer EVENT_THRESHOLD_PRICE = 10000;
+
     public static final Integer WEEKEND_DISCOUNT_PRICE = 2023;
     public static final Integer WEEKDAY_DISCOUNT_PRICE = 2023;
 

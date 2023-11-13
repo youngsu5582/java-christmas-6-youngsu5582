@@ -6,7 +6,14 @@ public enum OutputViewMessage {
     MENU_MESSAGE("<주문 메뉴>"),
     MENU_FORMAT("%s %d개"),
     TOTAL_SALE_MESSAGE("<할인 전 총주문 금액>"),
-    PRICE_FORMAT("%s원");
+    PRICE_FORMAT("%s원"),
+    PRESENT_MENU_MESSAGE("<증정 메뉴>"),
+    REWARD_MESSAGE("<혜택 내역>"),
+    EVENT_FORMAT("%s: %s원"),
+    PRESENT_EVENT_FORMAT("증정 이벤트: %s원"),
+    TOTAL_REWARD_MESSAGE("<총혜택 금액>"),
+    NONE("없음");
+
 
     private final String message;
 
