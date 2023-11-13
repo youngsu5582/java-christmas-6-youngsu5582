@@ -1,7 +1,7 @@
 package christmas.lib.event;
 
-public abstract class Event<T, E> {
-    public abstract boolean checkCondition(T object);
+public abstract class Event<T1, T2,R> {
+    public abstract boolean checkCondition(T1 object);
 
-    public abstract Object provideReward(E object);
+    public abstract R provideReward(T2 object);
 }
