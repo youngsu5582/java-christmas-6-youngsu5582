@@ -5,9 +5,8 @@ import christmas.domain.menu.MenuItem;
 
 public enum Appetizer implements MenuItem {
     MUSHROOM_SOUP("양송이수프", 6000),
-    TAPAS("타파스", 5000),
+    TAPAS("타파스", 5500),
     CAESAR_SALAD("시저샐러드", 8000);
-
 
     private Menu menu;
 

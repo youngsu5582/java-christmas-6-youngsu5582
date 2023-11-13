@@ -14,7 +14,7 @@ import static christmas.constant.EventConstant.WEEKDAY_DISCOUNT_PRICE;
 
 public class WeekdayDiscountEvent extends DiscountEvent<Bill> {
     private final Integer DISCOUNT_PRICE = WEEKDAY_DISCOUNT_PRICE;
-    private final String EVENT_NAME = "주말 할인";
+    private final String EVENT_NAME = "평일 할인";
 
     @Override
     public boolean checkCondition(Date date) {

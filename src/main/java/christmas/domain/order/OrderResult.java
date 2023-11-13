@@ -21,7 +21,7 @@ public record OrderResult(Category category, OrderInfo orderInfo) {
     }
     private static void validateMenuIsExist(MenuInfo menuInfo){
         if(menuInfo.menu()==null)
-            throw new OrderException(OrderExceptionMessage.DUPLICATE_MENU);
+            throw new OrderException(OrderExceptionMessage.NOT_EXIST_MENU);
     }
 
     private static MenuInfo searchMenu(String menuName) {
