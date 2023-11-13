@@ -14,7 +14,7 @@ public class ChampagnePresentEventTest {
     void ChampagnePresentCase() {
         int price = CHAMPAGNE_LIMIT_PRICE;
         Assertions.assertTrue(event.checkCondition(price));
-        Assertions.assertEquals(event.provideReward(null), CHAMPAGNE_PRESENT);
+        Assertions.assertEquals(event.provideReward(null).present(), CHAMPAGNE_PRESENT);
     }
     @Test
     @DisplayName("특정 금액 아래면 증정 받지 못한다.")

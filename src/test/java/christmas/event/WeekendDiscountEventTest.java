@@ -24,18 +24,22 @@ public class WeekendDiscountEventTest {
     void WeekendCaseAndOrderMainDish(){
         Date date = Date.of(8);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("크리스마스파스타-3"));
+        int expectedCount = EventConstant.WEEKEND_DISCOUNT_PRICE*3;
 
         Bill bill = Bill.of(requestOrderList);
+
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertEquals(EventConstant.WEEKEND_DISCOUNT_PRICE*3,event.provideReward(bill));
+        Assertions.assertEquals(expectedCount,event.provideReward(bill).discountPrice());
     }
     @Test
     @DisplayName("주말이라도 메인 디쉬가 없으면 할인을 받지 못한다.")
     void WeekendCaseAndNotOrderMainDish(){
         Date date = Date.of(8);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("아이스크림-2"));
+
         Bill bill = Bill.of(requestOrderList);
+
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertEquals(0,event.provideReward(bill));
+        Assertions.assertEquals(0,event.provideReward(bill).discountPrice());
     }
 }

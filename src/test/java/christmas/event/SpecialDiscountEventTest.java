@@ -14,7 +14,7 @@ public class SpecialDiscountEventTest {
     void SpecialDayCase() {
         Date date = Date.of(10);
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertEquals(event.provideReward(null), SPECIAL_DAY_PRICE);
+        Assertions.assertEquals(event.provideReward(null).discountPrice(), SPECIAL_DAY_PRICE);
     }
     @Test
     @DisplayName("특정 날이 아닌 날은 할인액을 받지 못한다")

@@ -25,10 +25,12 @@ public class WeekdayDiscountEventTest {
     void WeekdayCaseAndOrderMainDish() {
         Date date = Date.of(7);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("아이스크림-2"));
+        int expectedCount = EventConstant.WEEKDAY_DISCOUNT_PRICE * 2;
 
         Bill bill = Bill.of(requestOrderList);
+
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertEquals(EventConstant.WEEKDAY_DISCOUNT_PRICE * 2, event.provideReward(bill));
+        Assertions.assertEquals(expectedCount, event.provideReward(bill).discountPrice());
     }
 
     @Test
@@ -36,8 +38,10 @@ public class WeekdayDiscountEventTest {
     void WeekdayCaseAndNotOrderMainDish() {
         Date date = Date.of(7);
         List<RequestOrder> requestOrderList = List.of(RequestOrder.of("크리스마스파스타-2"));
+
         Bill bill = Bill.of(requestOrderList);
+
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertEquals(0, event.provideReward(bill));
+        Assertions.assertEquals(0, event.provideReward(bill).discountPrice());
     }
 }

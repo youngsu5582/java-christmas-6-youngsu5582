@@ -16,7 +16,7 @@ public class ChristmasDiscountEventTest {
     void WeekendCase() {
         Date date = Date.of(8);
         Assertions.assertTrue(event.checkCondition(date));
-        Assertions.assertNotEquals(event.provideReward(date), D_DAY_START_PRICE);
+        Assertions.assertNotEquals(event.provideReward(date).discountPrice(), D_DAY_START_PRICE);
     }
 
     @Test
