@@ -9,12 +9,14 @@ public class DateController {
     private DateService dateService = new DateService();
 
     public Date acceptVisitDate() {
-        try {
-            String dateInfo = InputView.inputVisitDate();
-            return dateService.createDate(dateInfo);
-        } catch (IllegalArgumentException exception) {
-            OutputView.printErrorMessage(exception.getMessage());
-            return acceptVisitDate();
+        while (true) {
+            try {
+                String dateInfo = InputView.inputVisitDate();
+                return dateService.createDate(dateInfo);
+            } catch (IllegalArgumentException exception) {
+                OutputView.printErrorMessage(exception.getMessage());
+            }
         }
     }
+
 }

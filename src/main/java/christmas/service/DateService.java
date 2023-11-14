@@ -13,7 +13,7 @@ public class DateService {
             Date date = Date.of(day);
             return date;
         }catch (ParserException exception){
-            throw new DateException(DateExceptionMessage.INVALID_DAY);
+            throw new DateException(DateExceptionMessage.INVALID_DAY,exception);
         }
     }
 }
