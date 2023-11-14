@@ -12,5 +12,11 @@ public class Formatter {
         StringBuilder sb = new StringBuilder();
         return sb.append('-').append(formatNumber(number)).toString();
     }
+    public static String formatBasedOnNumber(int number) {
+        if(number>0){
+            return formatNegativeNumber(number);
+        }
+        return formatNumber(number);
+    }
 
 }
