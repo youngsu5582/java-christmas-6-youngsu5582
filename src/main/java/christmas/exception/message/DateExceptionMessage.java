@@ -4,7 +4,7 @@ import static christmas.constant.DateConstant.START_DAY;
 import static christmas.constant.DateConstant.END_DAY;
 
 public enum DateExceptionMessage {
-    INVALID_DAY(String.format("%d에서 %d사이의 날짜를 입력해주세요!",START_DAY,END_DAY));
+    INVALID_DAY("유효하지 않은 날짜입니다. 다시 입력해 주세요.");
     private final String message;
 
     DateExceptionMessage(String message) {

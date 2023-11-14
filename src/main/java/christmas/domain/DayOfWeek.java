@@ -1,8 +1,5 @@
 package christmas.domain;
 
-import christmas.exception.DayOfWeekException;
-import christmas.exception.message.DayOfWeekExceptionMessage;
-
 import java.util.List;
 
 public enum DayOfWeek {
@@ -22,7 +19,7 @@ public enum DayOfWeek {
                 return day;
             }
         }
-        throw new DayOfWeekException(DayOfWeekExceptionMessage.INVALID_VALUE);
+        return null;
     }
 
     public boolean isWeekend() {
