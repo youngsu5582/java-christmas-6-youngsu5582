@@ -8,7 +8,8 @@ import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
 import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;
 
 public class ChampagnePresentEvent extends PresentEvent<Void> {
-    private static final Menu presentMenu = CHAMPAGNE_PRESENT;
+    private static final Menu PRESENT_MENU = CHAMPAGNE_PRESENT;
+    private static final Integer PRESENT_COUNT = 1;
 
     @Override
     public boolean checkCondition(Integer amount) {
@@ -20,6 +21,6 @@ public class ChampagnePresentEvent extends PresentEvent<Void> {
 
     @Override
     public PresentEventReward provideReward(Void object) {
-        return new PresentEventReward(presentMenu, 1);
+        return new PresentEventReward(PRESENT_MENU, PRESENT_COUNT);
     }
 }

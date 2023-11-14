@@ -1,23 +1,25 @@
 package christmas.service;
 
-import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import christmas.domain.date.Date;
 import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
+
 import christmas.domain.event.discount.ChristmasDiscountEvent;
 import christmas.domain.event.discount.SpecialDiscountEvent;
 import christmas.domain.event.discount.WeekdayDiscountEvent;
 import christmas.domain.event.discount.WeekendDiscountEvent;
 import christmas.domain.event.present.ChampagnePresentEvent;
+
 import christmas.lib.event.DiscountEvent;
 import christmas.lib.event.EventReward;
 import christmas.lib.event.PresentEvent;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
 
 public class EventService {
     public final List<DiscountEvent> discountEventList;
