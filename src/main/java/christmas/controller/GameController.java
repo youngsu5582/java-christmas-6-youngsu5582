@@ -7,7 +7,7 @@ import christmas.domain.order.Bill;
 import christmas.dto.RewardDto;
 import christmas.view.OutputView;
 
-public class Gamecontroller {
+public class GameController {
     private final DateController dateController = new DateController();
     private final OrderController orderController = new OrderController();
     private final EventController eventController = new EventController();
