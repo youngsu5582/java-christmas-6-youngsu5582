@@ -1,5 +1,6 @@
 package christmas.event.discount;
 
+import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_EVENT_MESSAGE;
 import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_PRICE;
 
 import christmas.domain.Date;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class WeekendDiscountEvent extends DiscountEvent<Bill> {
     private final Integer DISCOUNT_PRICE = WEEKEND_DISCOUNT_PRICE;
-    private final String EVENT_NAME = "주말 할인";
+    private final String EVENT_NAME = WEEKEND_DISCOUNT_EVENT_MESSAGE;
 
     @Override
     public boolean checkCondition(Date date) {

@@ -14,29 +14,23 @@ public class GameController {
     private final BadgeController badgeController = new BadgeController();
 
     public void run() {
-        OutputView.printWelcomeMessage();
+        printWelcomeMessage();
 
-        Date date = confirmVisitDate();
-        Bill bill = confirmOrder();
+        Date date = dateController.acceptVisitDate();
+        Bill bill = orderController.acceptOrder();
         printOrderResult(date, bill);
 
-        Reward reward = checkReward(date, bill);
+        Reward reward = eventController.confirmReward(date, bill);
+        RewardDto rewardDto = reward.toDto();
 
-        printRewardResult(reward.toDto());
-        printFinalCheckoutPrice(bill,reward.toDto());
+        printRewardResult(rewardDto);
+        printFinalCheckoutPrice(bill, rewardDto);
 
-        Badge badge = checkBadge(reward.toDto());
-        printBadgeResult(badge);
+        printBadgeResult(badgeController.grantBadge(rewardDto));
     }
 
-    public Date confirmVisitDate() {
-        Date date = dateController.acceptVisitDate();
-        return date;
-    }
-
-    public Bill confirmOrder() {
-        Bill bill = orderController.acceptOrder();
-        return bill;
+    public void printWelcomeMessage() {
+        OutputView.printWelcomeMessage();
     }
 
     public void printOrderResult(Date date, Bill bill) {
@@ -44,15 +38,7 @@ public class GameController {
         OutputView.printOrderMessage(bill);
     }
 
-    public Reward checkReward(Date date, Bill bill) {
-        Reward reward = eventController.confirmReward(date, bill);
-        return reward;
-    }
-    public Badge checkBadge(RewardDto rewardDto){
-        Badge badge = badgeController.grantBadge(rewardDto);
-        return badge;
-    }
-    public void printFinalCheckoutPrice(Bill bill,RewardDto rewardDto){
+    public void printFinalCheckoutPrice(Bill bill, RewardDto rewardDto) {
 
         int checkoutPrice = bill.totalPrice() - rewardDto.getTotalDiscountReward();
         OutputView.printFinalCheckoutPriceMessage(checkoutPrice);
@@ -61,7 +47,8 @@ public class GameController {
     public void printRewardResult(RewardDto rewardDto) {
         OutputView.printRewardsMessage(rewardDto);
     }
-    public void printBadgeResult(Badge badge){
+
+    public void printBadgeResult(Badge badge) {
         OutputView.printBadgeMessage(badge);
     }
 }
