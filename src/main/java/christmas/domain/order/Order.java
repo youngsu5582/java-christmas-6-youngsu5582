@@ -27,9 +27,12 @@ public record Order(List<RequestOrder> requestOrders) {
         List<RequestOrder> requestOrders = new ArrayList<>();
 
         for (String requestInfo : parsedRequestInfo) {
-            requestOrders.add(RequestOrder.of(requestInfo));
+            confirmRequestOrder(requestInfo,requestOrders);
         }
         return requestOrders;
+    }
+    private static void confirmRequestOrder(String requestInfo,List<RequestOrder> requestOrders){
+        requestOrders.add(RequestOrder.of(requestInfo));
     }
 
     private static void validate(List<RequestOrder> requestOrders) {

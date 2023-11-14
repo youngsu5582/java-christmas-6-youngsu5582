@@ -23,13 +23,19 @@ public record Bill(int totalPrice, EnumMap<Category, List<OrderInfo>> orderDetai
     private static EnumMap<Category, List<OrderInfo>> confirmOrders(List<RequestOrder> requestOrderList) {
         EnumMap<Category, List<OrderInfo>> orderMenuBoard = initOrderMenuBoard();
         for (RequestOrder requestOrder : requestOrderList) {
-            String orderName = requestOrder.orderName();
-            int orderAmount = requestOrder.amount();
-            OrderResult orderResult = OrderResult.of(orderName, orderAmount);
-            orderMenuBoard.get(orderResult.category()).add(orderResult.orderInfo());
+            confirmOrder(requestOrder, orderMenuBoard);
         }
         return orderMenuBoard;
+
     }
+
+    private static void confirmOrder(RequestOrder requestOrder, EnumMap<Category, List<OrderInfo>> orderMenuBoard) {
+        String orderName = requestOrder.orderName();
+        int orderAmount = requestOrder.amount();
+        OrderResult orderResult = OrderResult.of(orderName, orderAmount);
+        orderMenuBoard.get(orderResult.category()).add(orderResult.orderInfo());
+    }
+
 
     private static EnumMap<Category, List<OrderInfo>> initOrderMenuBoard() {
         EnumMap<Category, List<OrderInfo>> orderMenuBoard = new EnumMap<>(Category.class);
