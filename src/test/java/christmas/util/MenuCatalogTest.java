@@ -1,12 +1,10 @@
 package christmas.util;
 
-import christmas.domain.menu.Menu;
-
-import christmas.domain.menu.MenuInfo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import christmas.domain.menu.MenuInfo;
 
 public class MenuCatalogTest {
     @Test

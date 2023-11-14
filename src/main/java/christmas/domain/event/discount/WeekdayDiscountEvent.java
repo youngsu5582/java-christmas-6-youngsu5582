@@ -1,14 +1,16 @@
 package christmas.domain.event.discount;
 
+import java.util.List;
+
 import christmas.domain.date.Date;
 import christmas.domain.date.DayOfWeek;
+
 import christmas.domain.reward.DiscountEventReward;
 import christmas.domain.menu.Category;
+
 import christmas.domain.order.Bill;
 import christmas.domain.order.OrderInfo;
 import christmas.lib.event.DiscountEvent;
-
-import java.util.List;
 
 import static christmas.constant.EventConstant.WEEKDAY_DISCOUNT_EVENT_MESSAGE;
 import static christmas.constant.EventConstant.WEEKDAY_DISCOUNT_PRICE;

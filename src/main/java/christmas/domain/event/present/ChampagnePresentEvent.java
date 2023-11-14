@@ -1,12 +1,11 @@
 package christmas.domain.event.present;
 
-import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
-import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;
-
 import christmas.domain.reward.PresentEventReward;
 import christmas.domain.menu.Menu;
 import christmas.lib.event.PresentEvent;
 
+import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
+import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;
 
 public class ChampagnePresentEvent extends PresentEvent<Void> {
     private static final Menu presentMenu = CHAMPAGNE_PRESENT;

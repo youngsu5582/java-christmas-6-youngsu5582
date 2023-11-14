@@ -1,13 +1,13 @@
 package christmas.domain.event.discount;
 
-import static christmas.constant.EventConstant.SPECIAL_DAY_MESSAGE;
-import static christmas.constant.EventConstant.SPECIAL_DAY_PRICE;
+import java.util.List;
 
 import christmas.domain.date.Date;
 import christmas.domain.reward.DiscountEventReward;
 import christmas.lib.event.DiscountEvent;
 
-import java.util.List;
+import static christmas.constant.EventConstant.SPECIAL_DAY_MESSAGE;
+import static christmas.constant.EventConstant.SPECIAL_DAY_PRICE;
 
 public class SpecialDiscountEvent extends DiscountEvent<Void> {
     private final List<Integer> SPECIAL_DAY = List.of(3, 10, 17, 24, 25, 31);

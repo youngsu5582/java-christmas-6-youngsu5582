@@ -1,15 +1,15 @@
 package christmas.domain.order;
 
-import static christmas.constant.OrderConstant.ORDER_SEPARATOR;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import christmas.exception.OrderException;
 import christmas.exception.message.OrderExceptionMessage;
 import christmas.util.Parser;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import static christmas.constant.OrderConstant.ORDER_SEPARATOR;
 
 public record Order(List<RequestOrder> requestOrders) {
     private static final String SEPARATOR = ORDER_SEPARATOR;
@@ -27,11 +27,12 @@ public record Order(List<RequestOrder> requestOrders) {
         List<RequestOrder> requestOrders = new ArrayList<>();
 
         for (String requestInfo : parsedRequestInfo) {
-            confirmRequestOrder(requestInfo,requestOrders);
+            confirmRequestOrder(requestInfo, requestOrders);
         }
         return requestOrders;
     }
-    private static void confirmRequestOrder(String requestInfo,List<RequestOrder> requestOrders){
+
+    private static void confirmRequestOrder(String requestInfo, List<RequestOrder> requestOrders) {
         requestOrders.add(RequestOrder.of(requestInfo));
     }
 

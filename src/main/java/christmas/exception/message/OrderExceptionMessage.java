@@ -1,6 +1,5 @@
 package christmas.exception.message;
 
-import static christmas.constant.OrderConstant.MIN_AMOUNT;
 import static christmas.constant.OrderConstant.MAX_TOTAL_ORDER_COUNT;
 
 public enum OrderExceptionMessage {

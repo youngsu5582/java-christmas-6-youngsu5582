@@ -1,13 +1,14 @@
 package christmas.event;
 
-import static christmas.constant.EventConstant.D_DAY_START_PRICE;
-import static christmas.constant.EventConstant.CHRISTMAS_DAY;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import christmas.domain.date.Date;
 import christmas.domain.event.discount.ChristmasDiscountEvent;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
+import static christmas.constant.EventConstant.D_DAY_START_PRICE;
+import static christmas.constant.EventConstant.CHRISTMAS_DAY;
 
 public class ChristmasDiscountEventTest {
     ChristmasDiscountEvent event = new ChristmasDiscountEvent();

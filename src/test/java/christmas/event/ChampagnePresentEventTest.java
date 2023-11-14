@@ -1,9 +1,10 @@
 package christmas.event;
 
-import christmas.domain.event.present.ChampagnePresentEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import christmas.domain.event.present.ChampagnePresentEvent;
 
 import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
 import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;

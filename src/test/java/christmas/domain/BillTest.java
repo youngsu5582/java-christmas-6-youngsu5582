@@ -1,14 +1,15 @@
 package christmas.domain;
 
-import christmas.domain.order.Bill;
-import christmas.domain.order.RequestOrder;
-import christmas.exception.OrderException;
-import christmas.exception.message.OrderExceptionMessage;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import christmas.domain.order.Bill;
+import christmas.domain.order.RequestOrder;
+import christmas.exception.OrderException;
+import christmas.exception.message.OrderExceptionMessage;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

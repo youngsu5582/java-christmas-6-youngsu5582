@@ -1,14 +1,18 @@
 package christmas.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
 import christmas.domain.category.Drink;
 import christmas.domain.reward.DiscountEventReward;
 import christmas.domain.reward.PresentEventReward;
 import christmas.domain.reward.Reward;
 import christmas.lib.event.EventReward;
-import org.junit.jupiter.api.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RewardTest {
 

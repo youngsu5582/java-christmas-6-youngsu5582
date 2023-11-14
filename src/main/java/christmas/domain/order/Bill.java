@@ -1,14 +1,14 @@
 package christmas.domain.order;
 
-import static christmas.constant.OrderConstant.MAX_TOTAL_ORDER_COUNT;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
 
 import christmas.domain.menu.Category;
 import christmas.exception.OrderException;
 import christmas.exception.message.OrderExceptionMessage;
 
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.List;
+import static christmas.constant.OrderConstant.MAX_TOTAL_ORDER_COUNT;
 
 public record Bill(int totalPrice, EnumMap<Category, List<OrderInfo>> orderDetail) {
     public static Bill of(List<RequestOrder> requestOrderList) {

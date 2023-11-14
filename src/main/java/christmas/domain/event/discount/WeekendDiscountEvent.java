@@ -1,7 +1,6 @@
 package christmas.domain.event.discount;
 
-import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_EVENT_MESSAGE;
-import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_PRICE;
+import java.util.List;
 
 import christmas.domain.date.Date;
 import christmas.domain.date.DayOfWeek;
@@ -11,7 +10,8 @@ import christmas.domain.order.Bill;
 import christmas.domain.order.OrderInfo;
 import christmas.lib.event.DiscountEvent;
 
-import java.util.List;
+import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_EVENT_MESSAGE;
+import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_PRICE;
 
 public class WeekendDiscountEvent extends DiscountEvent<Bill> {
     private final Integer DISCOUNT_PRICE = WEEKEND_DISCOUNT_PRICE;

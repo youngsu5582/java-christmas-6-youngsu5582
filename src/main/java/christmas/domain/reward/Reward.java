@@ -1,10 +1,10 @@
 package christmas.domain.reward;
 
-import christmas.dto.RewardDto;
-import christmas.lib.event.EventReward;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import christmas.dto.RewardDto;
+import christmas.lib.event.EventReward;
 
 public class Reward {
     private List<DiscountEventReward> discountRewards;

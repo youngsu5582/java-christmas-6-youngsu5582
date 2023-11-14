@@ -1,11 +1,11 @@
 package christmas.domain;
 
-import christmas.domain.category.Dessert;
-import christmas.domain.menu.Category;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import christmas.domain.category.Dessert;
+import christmas.domain.menu.Category;
 
 public class CategoryTest {
     @Test

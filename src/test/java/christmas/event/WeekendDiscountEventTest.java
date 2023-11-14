@@ -1,15 +1,16 @@
 package christmas.event;
 
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import christmas.constant.EventConstant;
 import christmas.domain.date.Date;
 import christmas.domain.order.Bill;
 import christmas.domain.order.RequestOrder;
 import christmas.domain.event.discount.WeekendDiscountEvent;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 public class WeekendDiscountEventTest {
     WeekendDiscountEvent event = new WeekendDiscountEvent();

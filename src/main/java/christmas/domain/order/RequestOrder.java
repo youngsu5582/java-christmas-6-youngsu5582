@@ -1,11 +1,10 @@
 package christmas.domain.order;
 
+import java.util.List;
+
 import christmas.exception.OrderException;
-import christmas.exception.ParserException;
 import christmas.exception.message.OrderExceptionMessage;
 import christmas.util.Parser;
-
-import java.util.List;
 
 import static christmas.constant.OrderConstant.MIN_AMOUNT;
 import static christmas.constant.OrderConstant.REQUEST_SEPARATOR;

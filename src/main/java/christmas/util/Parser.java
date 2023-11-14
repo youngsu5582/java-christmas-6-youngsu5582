@@ -1,10 +1,10 @@
 package christmas.util;
 
-import christmas.exception.ParserException;
-import christmas.exception.message.ParserExceptionMessage;
-
 import java.util.Arrays;
 import java.util.List;
+
+import christmas.exception.ParserException;
+import christmas.exception.message.ParserExceptionMessage;
 
 public class Parser {
     public static Integer parseInfoToNumber(String info) {
