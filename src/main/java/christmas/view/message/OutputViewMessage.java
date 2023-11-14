@@ -12,6 +12,8 @@ public enum OutputViewMessage {
     EVENT_FORMAT("%s: %s원"),
     PRESENT_EVENT_FORMAT("증정 이벤트: %s원"),
     TOTAL_REWARD_MESSAGE("<총혜택 금액>"),
+    FINAL_PRICE_MESSAGE("<할인 후 예상 결제 금액>"),
+    BADGE_MESSAGE("<12월 이벤트 배지>"),
     NONE("없음");
 
 

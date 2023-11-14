@@ -1,6 +1,7 @@
 package christmas.view;
 
 import christmas.domain.Date;
+import christmas.domain.badge.Badge;
 import christmas.domain.event.DiscountEventReward;
 import christmas.domain.event.PresentEventReward;
 import christmas.domain.menu.Category;
@@ -45,10 +46,21 @@ public class OutputView {
         printRewardMessage(rewardDto);
         printTotalRewardPrice(rewardDto.totalRewardPrice());
     }
+    public static void printBadgeMessage(Badge badge){
+        printMessage(OutputViewMessage.BADGE_MESSAGE.getMessage());
+        printMessage(badge.getBadgeName());
+    }
+    public static void printFinalCheckoutPriceMessage(int checkoutPrice){
+        printMessage(OutputViewMessage.FINAL_PRICE_MESSAGE.getMessage());
+        String formattedNumber = Formatter.formatNumber(checkoutPrice);
+        printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(formattedNumber));
+        printNewLine();
+    }
 
     private static void printTotalRewardPrice(int totalRewardPrice) {
         printMessage(OutputViewMessage.TOTAL_REWARD_MESSAGE.getMessage());
-        printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(Formatter.formatNegativeNumber(totalRewardPrice)));
+        String formattedNumber = Formatter.formatBasedOnNumber(totalRewardPrice);
+        printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(formattedNumber));
         printNewLine();
     }
 
