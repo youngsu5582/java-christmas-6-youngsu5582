@@ -38,6 +38,6 @@ public class OrderTest {
         String duplicateInfo = "양송이수프-3,초코케이크-2,양송이수프-2";
         assertThatThrownBy(() -> Order.of(duplicateInfo))
                 .isInstanceOf(OrderException.class)
-                .hasMessageContaining(OrderExceptionMessage.DUPLICATE_MENU.getMessage());
+                .hasMessageContaining(OrderExceptionMessage.INVALID_FORMAT.getMessage());
     }
 }

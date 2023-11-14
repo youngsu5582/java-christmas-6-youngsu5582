@@ -15,7 +15,9 @@ public record RequestOrder(String orderName, int amount) {
 
     public static RequestOrder of(String request) {
         List<String> parsedRequest = Parser.parseInfoWithSeparator(request, SEPARATOR);
+
         validate(parsedRequest);
+
         String orderName = parsedRequest.get(0);
         int amount = Parser.parseInfoToNumber(parsedRequest.get(1));
         return new RequestOrder(orderName, amount);

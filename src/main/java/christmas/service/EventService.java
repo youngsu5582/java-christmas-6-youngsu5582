@@ -1,6 +1,7 @@
 package christmas.service;
 
 import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
+
 import christmas.domain.Date;
 import christmas.domain.event.Reward;
 import christmas.domain.order.Bill;
@@ -37,11 +38,12 @@ public class EventService {
     }
 
     public Reward createReward(Date date, Bill bill) {
-        return new Reward(collectTotalReward(date, bill));
+        List<EventReward> eventRewards = collectEventReward(date, bill);
+        return new Reward(eventRewards);
     }
 
-    public List<EventReward> collectTotalReward(Date date, Bill bill) {
-        if(bill.totalPrice()< EVENT_THRESHOLD_PRICE){
+    public List<EventReward> collectEventReward(Date date, Bill bill) {
+        if (bill.totalPrice() < EVENT_THRESHOLD_PRICE) {
             return new ArrayList<>();
         }
         return Stream.concat(

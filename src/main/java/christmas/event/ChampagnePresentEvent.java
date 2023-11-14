@@ -3,7 +3,6 @@ package christmas.event;
 import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
 import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;
 
-import christmas.domain.category.Drink;
 import christmas.domain.event.PresentEventReward;
 import christmas.domain.menu.Menu;
 import christmas.lib.event.PresentEvent;

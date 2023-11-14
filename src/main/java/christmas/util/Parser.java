@@ -7,14 +7,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Parser {
-    public static Integer parseInfoToNumber(String info){
-        try{
+    public static Integer parseInfoToNumber(String info) {
+        try {
             return Integer.parseInt(info);
-        }catch (NumberFormatException exception){
+        } catch (NumberFormatException exception) {
             throw new ParserException(ParserExceptionMessage.NOT_NUMBER);
         }
     }
-    public static List<String> parseInfoWithSeparator(String info, String seperator){
-        return Arrays.asList(info.split(seperator));
+
+    public static List<String> parseInfoWithSeparator(String info, String separator) {
+        return Arrays.asList(info.split(separator));
     }
 }

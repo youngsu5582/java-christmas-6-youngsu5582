@@ -10,7 +10,6 @@ public class InputView {
     }
 
     public static String inputVisitDate() {
-
         System.out.println(InputViewMessage.DATE_MESSAGE.getMessage());
         return readInput();
     }

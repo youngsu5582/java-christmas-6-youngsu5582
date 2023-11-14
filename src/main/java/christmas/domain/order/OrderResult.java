@@ -10,9 +10,10 @@ public record OrderResult(Category category, OrderInfo orderInfo) {
     public static OrderResult of(String orderName, int orderAmount) {
 
         MenuInfo menuInfo = searchMenu(orderName);
-        Category category = menuInfo.category();
 
         validate(menuInfo);
+
+        Category category = menuInfo.category();
         OrderInfo orderInfo = new OrderInfo(menuInfo.menu(), orderAmount);
         return new OrderResult(category, orderInfo);
     }

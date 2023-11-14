@@ -7,11 +7,12 @@ import christmas.view.OutputView;
 
 public class DateController {
     private DateService dateService = new DateService();
+
     public Date acceptVisitDate() {
         try {
             String dateInfo = InputView.inputVisitDate();
             return dateService.createDate(dateInfo);
-        }catch (IllegalArgumentException exception){
+        } catch (IllegalArgumentException exception) {
             OutputView.printErrorMessage(exception.getMessage());
             return acceptVisitDate();
         }
