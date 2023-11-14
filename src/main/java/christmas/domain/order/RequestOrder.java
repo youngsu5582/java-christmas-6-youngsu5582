@@ -44,8 +44,8 @@ public record RequestOrder(String orderName, int amount) {
     }
 
     private static void validateAmount(String amountInfo) {
-        validateAmountInfoIsNumber(amountInfo);
-        validateAmountIsInRange(Integer.parseInt(amountInfo));
+        int amount = Parser.parseInfoToNumber(amountInfo);
+        validateAmountIsInRange(amount);
     }
 
 
@@ -59,14 +59,6 @@ public record RequestOrder(String orderName, int amount) {
 
     private static boolean isSpecial(char ch) {
         return !Character.isAlphabetic(ch);
-    }
-
-    private static void validateAmountInfoIsNumber(String amountInfo) {
-        try {
-            Parser.parseInfoToNumber(amountInfo);
-        } catch (ParserException exception) {
-            throw new OrderException(OrderExceptionMessage.INVALID_FORMAT);
-        }
     }
 
     private static void validateAmountIsInRange(int amount) {

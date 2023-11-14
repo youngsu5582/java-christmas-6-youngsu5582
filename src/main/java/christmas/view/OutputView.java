@@ -46,14 +46,35 @@ public class OutputView {
         printRewardMessage(rewardDto);
         printTotalRewardPrice(rewardDto.totalRewardPrice());
     }
-    public static void printBadgeMessage(Badge badge){
+
+    public static void printBadgeMessage(Badge badge) {
         printMessage(OutputViewMessage.BADGE_MESSAGE.getMessage());
         printMessage(badge.getBadgeName());
     }
-    public static void printFinalCheckoutPriceMessage(int checkoutPrice){
+
+    public static void printFinalCheckoutPriceMessage(int checkoutPrice) {
         printMessage(OutputViewMessage.FINAL_PRICE_MESSAGE.getMessage());
         String formattedNumber = Formatter.formatNumber(checkoutPrice);
         printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(formattedNumber));
+        printNewLine();
+    }
+
+    private static void printMenuMessage(EnumMap<Category, List<OrderInfo>> orderDetail) {
+        printMessage(OutputViewMessage.MENU_MESSAGE.getMessage());
+        for (List<OrderInfo> orderInfos : orderDetail.values()) {
+            for (OrderInfo orderInfo : orderInfos) {
+                String orderName = orderInfo.menu().name();
+                Integer orderAmount = orderInfo.amount();
+                printMessage(OutputViewMessage.MENU_FORMAT.getFormattedMessage(orderName, orderAmount));
+            }
+        }
+        printNewLine();
+    }
+
+    private static void printTotalPriceMessage(int totalPrice) {
+        printMessage(OutputViewMessage.TOTAL_SALE_MESSAGE.getMessage());
+        String formattedPrice = Formatter.formatNumber(totalPrice);
+        printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(formattedPrice));
         printNewLine();
     }
 
@@ -94,7 +115,7 @@ public class OutputView {
             String FormattedDiscountPrice = Formatter.formatNegativeNumber(discountReward.discountPrice());
             printMessage(OutputViewMessage.EVENT_FORMAT.getFormattedMessage(eventName, FormattedDiscountPrice));
         }
-        String FormattedDiscountPrice = Formatter.formatNegativeNumber(calculateTotalPresentPrice(presentRewards));
+        String FormattedDiscountPrice = Formatter.formatBasedOnNumber(calculateTotalPresentPrice(presentRewards));
         printMessage(OutputViewMessage.PRESENT_EVENT_FORMAT.getFormattedMessage(FormattedDiscountPrice));
         printNewLine();
     }
@@ -105,25 +126,6 @@ public class OutputView {
             totalPrice += presentReward.present().price();
         }
         return totalPrice;
-    }
-
-    private static void printMenuMessage(EnumMap<Category, List<OrderInfo>> orderDetail) {
-        printMessage(OutputViewMessage.MENU_MESSAGE.getMessage());
-        for (List<OrderInfo> orderInfos : orderDetail.values()) {
-            for (OrderInfo orderInfo : orderInfos) {
-                String orderName = orderInfo.menu().name();
-                Integer orderAmount = orderInfo.amount();
-                printMessage(OutputViewMessage.MENU_FORMAT.getFormattedMessage(orderName, orderAmount));
-            }
-        }
-        printNewLine();
-    }
-
-    private static void printTotalPriceMessage(int totalPrice) {
-        printMessage(OutputViewMessage.TOTAL_SALE_MESSAGE.getMessage());
-        String formattedPrice = Formatter.formatNumber(totalPrice);
-        printMessage(OutputViewMessage.PRICE_FORMAT.getFormattedMessage(formattedPrice));
-        printNewLine();
     }
 
 
