@@ -1,7 +1,7 @@
-package christmas.event.discount;
+package christmas.domain.event.discount;
 
-import christmas.domain.Date;
-import christmas.domain.event.DiscountEventReward;
+import christmas.domain.date.Date;
+import christmas.domain.reward.DiscountEventReward;
 import christmas.lib.event.DiscountEvent;
 
 import static christmas.constant.EventConstant.CHRISTMAS_DAY;

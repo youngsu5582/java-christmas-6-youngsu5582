@@ -1,6 +1,6 @@
 package christmas.controller;
 
-import christmas.domain.Date;
+import christmas.domain.date.Date;
 import christmas.service.DateService;
 import christmas.view.InputView;
 import christmas.view.OutputView;

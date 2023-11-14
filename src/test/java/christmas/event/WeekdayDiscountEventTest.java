@@ -1,10 +1,10 @@
 package christmas.event;
 
 import christmas.constant.EventConstant;
-import christmas.domain.Date;
+import christmas.domain.date.Date;
 import christmas.domain.order.Bill;
 import christmas.domain.order.RequestOrder;
-import christmas.event.discount.WeekdayDiscountEvent;
+import christmas.domain.event.discount.WeekdayDiscountEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

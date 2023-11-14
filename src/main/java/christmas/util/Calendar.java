@@ -1,7 +1,7 @@
 package christmas.util;
 
 
-import christmas.domain.DayOfWeek;
+import christmas.domain.date.DayOfWeek;
 
 public class Calendar {
     private final static DayOfWeek startDate = DayOfWeek.FRIDAY;

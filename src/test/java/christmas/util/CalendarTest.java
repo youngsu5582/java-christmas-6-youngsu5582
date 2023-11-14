@@ -1,6 +1,6 @@
 package christmas.util;
 
-import christmas.domain.DayOfWeek;
+import christmas.domain.date.DayOfWeek;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

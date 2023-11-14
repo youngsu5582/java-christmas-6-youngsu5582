@@ -2,14 +2,14 @@ package christmas.service;
 
 import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
 
-import christmas.domain.Date;
-import christmas.domain.event.Reward;
+import christmas.domain.date.Date;
+import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
-import christmas.event.discount.ChristmasDiscountEvent;
-import christmas.event.discount.SpecialDiscountEvent;
-import christmas.event.discount.WeekdayDiscountEvent;
-import christmas.event.discount.WeekendDiscountEvent;
-import christmas.event.present.ChampagnePresentEvent;
+import christmas.domain.event.discount.ChristmasDiscountEvent;
+import christmas.domain.event.discount.SpecialDiscountEvent;
+import christmas.domain.event.discount.WeekdayDiscountEvent;
+import christmas.domain.event.discount.WeekendDiscountEvent;
+import christmas.domain.event.present.ChampagnePresentEvent;
 import christmas.lib.event.DiscountEvent;
 import christmas.lib.event.EventReward;
 import christmas.lib.event.PresentEvent;

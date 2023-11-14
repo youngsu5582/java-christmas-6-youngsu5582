@@ -1,10 +1,10 @@
-package christmas.event.discount;
+package christmas.domain.event.discount;
 
 import static christmas.constant.EventConstant.SPECIAL_DAY_MESSAGE;
 import static christmas.constant.EventConstant.SPECIAL_DAY_PRICE;
 
-import christmas.domain.Date;
-import christmas.domain.event.DiscountEventReward;
+import christmas.domain.date.Date;
+import christmas.domain.reward.DiscountEventReward;
 import christmas.lib.event.DiscountEvent;
 
 import java.util.List;

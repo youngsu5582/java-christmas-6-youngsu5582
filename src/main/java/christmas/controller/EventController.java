@@ -1,7 +1,7 @@
 package christmas.controller;
 
-import christmas.domain.Date;
-import christmas.domain.event.Reward;
+import christmas.domain.date.Date;
+import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
 import christmas.service.EventService;
 

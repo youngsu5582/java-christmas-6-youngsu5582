@@ -1,6 +1,6 @@
 package christmas.service;
 
-import christmas.domain.Date;
+import christmas.domain.date.Date;
 import christmas.exception.DateException;
 import christmas.exception.ParserException;
 import christmas.exception.message.DateExceptionMessage;

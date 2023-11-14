@@ -1,8 +1,8 @@
 package christmas.lib.event;
 
 
-import christmas.domain.Date;
-import christmas.domain.event.DiscountEventReward;
+import christmas.domain.date.Date;
+import christmas.domain.reward.DiscountEventReward;
 
 public abstract class DiscountEvent<T> extends Event<Date, T,DiscountEventReward> {
 

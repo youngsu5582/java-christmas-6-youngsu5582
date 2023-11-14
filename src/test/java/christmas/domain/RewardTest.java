@@ -1,9 +1,9 @@
 package christmas.domain;
 
 import christmas.domain.category.Drink;
-import christmas.domain.event.DiscountEventReward;
-import christmas.domain.event.PresentEventReward;
-import christmas.domain.event.Reward;
+import christmas.domain.reward.DiscountEventReward;
+import christmas.domain.reward.PresentEventReward;
+import christmas.domain.reward.Reward;
 import christmas.lib.event.EventReward;
 import org.junit.jupiter.api.*;
 

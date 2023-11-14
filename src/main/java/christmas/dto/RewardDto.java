@@ -1,7 +1,7 @@
 package christmas.dto;
 
-import christmas.domain.event.DiscountEventReward;
-import christmas.domain.event.PresentEventReward;
+import christmas.domain.reward.DiscountEventReward;
+import christmas.domain.reward.PresentEventReward;
 
 import java.util.List;
 

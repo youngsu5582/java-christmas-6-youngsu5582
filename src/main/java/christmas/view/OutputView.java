@@ -1,9 +1,9 @@
 package christmas.view;
 
-import christmas.domain.Date;
+import christmas.domain.date.Date;
 import christmas.domain.badge.Badge;
-import christmas.domain.event.DiscountEventReward;
-import christmas.domain.event.PresentEventReward;
+import christmas.domain.reward.DiscountEventReward;
+import christmas.domain.reward.PresentEventReward;
 import christmas.domain.menu.Category;
 import christmas.domain.order.Bill;
 import christmas.domain.order.OrderInfo;

@@ -7,7 +7,8 @@ import christmas.domain.menu.MenuInfo;
 import christmas.domain.menu.MenuItem;
 
 public class MenuCatalog {
-    private static final MenuInfo NONE = new MenuInfo(null,null);
+    private static final MenuInfo NONE = new MenuInfo(null, null);
+
     public static MenuInfo searchMenuInfoFromMenuName(String menuName) {
         for (Category category : Category.values()) {
             Menu menu = serachFromMenuWithMenuNameAndCategory(menuName, category);

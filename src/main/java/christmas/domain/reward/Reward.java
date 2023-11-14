@@ -1,4 +1,4 @@
-package christmas.domain.event;
+package christmas.domain.reward;
 
 import christmas.dto.RewardDto;
 import christmas.lib.event.EventReward;

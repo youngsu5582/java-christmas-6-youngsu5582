@@ -1,8 +1,8 @@
-package christmas.event.discount;
+package christmas.domain.event.discount;
 
-import christmas.domain.Date;
-import christmas.domain.DayOfWeek;
-import christmas.domain.event.DiscountEventReward;
+import christmas.domain.date.Date;
+import christmas.domain.date.DayOfWeek;
+import christmas.domain.reward.DiscountEventReward;
 import christmas.domain.menu.Category;
 import christmas.domain.order.Bill;
 import christmas.domain.order.OrderInfo;
