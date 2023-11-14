@@ -1,6 +1,7 @@
 package christmas.event;
 
 import christmas.domain.Date;
+import christmas.event.discount.SpecialDiscountEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

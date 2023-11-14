@@ -1,4 +1,4 @@
-package christmas.event;
+package christmas.event.discount;
 
 import static christmas.constant.EventConstant.D_DAY_DISCOUNT_UNIT;
 import static christmas.constant.EventConstant.D_DAY_START_PRICE;

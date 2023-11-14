@@ -1,4 +1,6 @@
-package christmas.event;
+package christmas.event.discount;
+
+import static christmas.constant.EventConstant.WEEKEND_DISCOUNT_PRICE;
 
 import christmas.domain.Date;
 import christmas.domain.DayOfWeek;
@@ -10,16 +12,14 @@ import christmas.lib.event.DiscountEvent;
 
 import java.util.List;
 
-import static christmas.constant.EventConstant.WEEKDAY_DISCOUNT_PRICE;
-
-public class WeekdayDiscountEvent extends DiscountEvent<Bill> {
-    private final Integer DISCOUNT_PRICE = WEEKDAY_DISCOUNT_PRICE;
-    private final String EVENT_NAME = "평일 할인";
+public class WeekendDiscountEvent extends DiscountEvent<Bill> {
+    private final Integer DISCOUNT_PRICE = WEEKEND_DISCOUNT_PRICE;
+    private final String EVENT_NAME = "주말 할인";
 
     @Override
     public boolean checkCondition(Date date) {
         DayOfWeek dayOfWeek = date.dayOfWeek();
-        if (dayOfWeek.isWeekday()) {
+        if (dayOfWeek.isWeekend()) {
             return true;
         }
         return false;
@@ -27,7 +27,7 @@ public class WeekdayDiscountEvent extends DiscountEvent<Bill> {
 
     @Override
     public DiscountEventReward provideReward(Bill bill) {
-        List<OrderInfo> orderInfos = bill.orderDetail().get(Category.DESERT);
+        List<OrderInfo> orderInfos = bill.orderDetail().get(Category.MAIN_DISH);
         Integer count = countOrderMenu(orderInfos);
         return new DiscountEventReward(EVENT_NAME, count * DISCOUNT_PRICE);
     }

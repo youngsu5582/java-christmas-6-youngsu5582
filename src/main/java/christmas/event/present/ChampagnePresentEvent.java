@@ -1,4 +1,4 @@
-package christmas.event;
+package christmas.event.present;
 
 import static christmas.constant.EventConstant.CHAMPAGNE_LIMIT_PRICE;
 import static christmas.constant.EventConstant.CHAMPAGNE_PRESENT;
