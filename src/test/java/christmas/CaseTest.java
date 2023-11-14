@@ -1,8 +1,9 @@
 package christmas;
 
-import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import camp.nextstep.edu.missionutils.test.NsTest;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -94,6 +95,28 @@ class CaseTest extends NsTest {
                     "-29,046원",
                     "115,954원",
                     "산타"
+            );
+        });
+    }
+    @Test
+    @DisplayName("""
+            8일날 초코케이크 7개 , 타파스 2개 먹는 케이스
+            총 혜택 금액 : 29,046원 ( 증정 이벤트 + 주말 할인*2 )
+            금액 : 120,000 - 4,046 = 115,954
+            이벤트 뱃지 : 산타
+            """)
+    void case5() {
+        assertSimpleTest(() -> {
+            run("8", "초코케이크-7,타파스-2");
+            assertThat(output()).contains(
+                    "타파스 2개",
+                    "초코케이크 7개",
+                    "116,000원",
+                    "크리스마스 디데이 할인: -1,700원",
+                    "증정 이벤트: 0원",
+                    "-1,700원",
+                    "114,300원",
+                    "없음"
             );
         });
     }

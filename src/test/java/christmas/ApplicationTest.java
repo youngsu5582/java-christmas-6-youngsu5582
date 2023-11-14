@@ -4,7 +4,10 @@ import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class ApplicationTest extends NsTest {
     private static final String LINE_SEPARATOR = System.lineSeparator();
@@ -48,6 +51,37 @@ class ApplicationTest extends NsTest {
             assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         });
     }
+
+    /**
+     * 임의 추가한 테스트 케이스
+     */
+    //-----------------------------------------------------------------------------
+    
+    @ParameterizedTest
+    @DisplayName("부적절한 메뉴 포맷")
+    @ValueSource(strings = {"타파스리-15","타파스-4,타파스-2","타파스-3.아이스크림-1"})
+    void 메뉴_오류_테스트(String invalidMenuInfo){
+        assertSimpleTest(() -> {
+            runException("3", invalidMenuInfo);
+            assertThat(output()).contains("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        });
+    }
+
+    @Test
+    void 음료_단독_주문_테스트() {
+        assertSimpleTest(() -> {
+            runException("3", "제로콜라-3");
+            assertThat(output()).contains("[ERROR] 음료만 주문할 수 없습니다!");
+        });
+    }
+    @Test
+    void 메뉴_초과_주문_테스트() {
+        assertSimpleTest(() -> {
+            runException("3", "아이스크림-21");
+            assertThat(output()).contains("[ERROR] 총 주문한 개수가 20를 초과했습니다!");
+        });
+    }
+
 
     @Override
     protected void runMain() {
