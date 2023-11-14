@@ -35,6 +35,6 @@ public class RequestOrderTest {
     void throwExceptionWhenAmountOutBound(String invalidAmountRequestInfo){
         assertThatThrownBy(()->RequestOrder.of(invalidAmountRequestInfo))
                 .isInstanceOf(OrderException.class)
-                .hasMessageContaining(OrderExceptionMessage.INVALID_AMOUNT.getMessage());
+                .hasMessageContaining(OrderExceptionMessage.INVALID_FORMAT.getMessage());
     }
 }
