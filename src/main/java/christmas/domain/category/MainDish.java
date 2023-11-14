@@ -23,7 +23,4 @@ public enum MainDish implements MenuItem {
         return menu.name();
     }
 
-    public int getPrice() {
-        return menu.price();
-    }
 }

@@ -23,8 +23,4 @@ public enum Drink implements MenuItem {
         return menu.name();
     }
 
-    @Override
-    public int getPrice() {
-        return menu.price();
-    }
 }

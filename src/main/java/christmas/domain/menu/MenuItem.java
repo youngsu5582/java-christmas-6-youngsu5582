@@ -6,5 +6,4 @@ public abstract interface MenuItem {
 
     String getName();
 
-    int getPrice();
 }
