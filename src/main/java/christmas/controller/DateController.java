@@ -1,12 +1,13 @@
 package christmas.controller;
 
 import christmas.domain.date.Date;
+import christmas.factory.ServiceFactory;
 import christmas.service.DateService;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
 public class DateController {
-    private DateService dateService = new DateService();
+    private DateService dateService = ServiceFactory.getDateService();
 
     public Date acceptVisitDate() {
         while (true) {

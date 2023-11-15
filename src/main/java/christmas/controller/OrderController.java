@@ -3,13 +3,14 @@ package christmas.controller;
 import christmas.domain.order.Bill;
 import christmas.domain.order.Order;
 import christmas.exception.OrderException;
+import christmas.factory.ServiceFactory;
 import christmas.service.OrderService;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
 
 public class OrderController {
-    OrderService orderService = new OrderService();
+    OrderService orderService = ServiceFactory.getOrderService();
 
     public Bill acceptOrder() {
         while (true) {

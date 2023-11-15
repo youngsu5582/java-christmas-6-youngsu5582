@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import christmas.domain.date.Date;
+import christmas.domain.event.EventList;
 import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
 
@@ -15,6 +16,7 @@ import christmas.domain.event.discount.WeekdayDiscountEvent;
 import christmas.domain.event.discount.WeekendDiscountEvent;
 import christmas.domain.event.present.ChampagnePresentEvent;
 
+import christmas.factory.EventFactory;
 import christmas.lib.event.DiscountEvent;
 import christmas.lib.event.EventReward;
 import christmas.lib.event.PresentEvent;
@@ -22,25 +24,10 @@ import christmas.lib.event.PresentEvent;
 import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
 
 public class EventService {
-    public final List<DiscountEvent> discountEventList;
-    public final List<PresentEvent> presentEventList;
+    private final EventList eventList;
 
     public EventService() {
-        this.discountEventList = createDiscountEventList();
-        this.presentEventList = createPresentEventList();
-    }
-
-    private List<DiscountEvent> createDiscountEventList() {
-        return List.of(
-                new ChristmasDiscountEvent(),
-                new SpecialDiscountEvent(),
-                new WeekdayDiscountEvent(),
-                new WeekendDiscountEvent());
-    }
-
-    private List<PresentEvent> createPresentEventList() {
-        return List.of(
-                new ChampagnePresentEvent());
+        eventList = EventList.of(EventFactory.getEventList());
     }
 
     public Reward createReward(Date date, Bill bill) {
@@ -59,13 +46,13 @@ public class EventService {
     }
 
     private Stream<EventReward> collectDiscountReward(Date date, Bill bill) {
-        return discountEventList.stream()
+        return eventList.discountEventList().stream()
                 .filter(event -> event.checkCondition(date))
                 .map(event -> checkDiscountReward(event, date, bill));
     }
 
     private Stream<EventReward> collectPresentReward(Bill bill) {
-        return presentEventList.stream()
+        return eventList.presentEventList().stream()
                 .filter(event -> event.checkCondition(bill.totalPrice()))
                 .map(event -> checkPresentReward(event));
     }

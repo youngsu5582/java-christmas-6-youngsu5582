@@ -5,13 +5,14 @@ import christmas.domain.badge.Badge;
 import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
 import christmas.dto.RewardDto;
+import christmas.factory.ControllerFactory;
 import christmas.view.OutputView;
 
 public class GameController {
-    private final DateController dateController = new DateController();
-    private final OrderController orderController = new OrderController();
-    private final EventController eventController = new EventController();
-    private final BadgeController badgeController = new BadgeController();
+    private final DateController dateController = ControllerFactory.getDateController();
+    private final OrderController orderController = ControllerFactory.getOrderController();
+    private final EventController eventController = ControllerFactory.getEventController();
+    private final BadgeController badgeController = ControllerFactory.getBadgeController();
 
     public void run() {
         printWelcomeMessage();
