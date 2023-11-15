@@ -59,7 +59,7 @@ class ApplicationTest extends NsTest {
     
     @ParameterizedTest
     @DisplayName("부적절한 메뉴 포맷")
-    @ValueSource(strings = {"타파스리-15","타파스-4,타파스-2","타파스-3.아이스크림-1"})
+    @ValueSource(strings = {"타파스리-15","타파스-4,타파스-2","타파스-3.아이스크림-1","아이스크림-0"})
     void 메뉴_오류_테스트(String invalidMenuInfo){
         assertSimpleTest(() -> {
             runException("3", invalidMenuInfo);

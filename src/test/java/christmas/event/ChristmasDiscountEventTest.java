@@ -15,7 +15,7 @@ public class ChristmasDiscountEventTest {
 
     @Test
     @DisplayName("1일부터 크리스마스 까지 할인액은 늘어난다.")
-    void WeekendCase() {
+    void ChristmasDayInCase() {
         Date date = Date.of(8);
         Assertions.assertTrue(event.checkCondition(date));
         Assertions.assertNotEquals(event.provideReward(date).discountPrice(), D_DAY_START_PRICE);
@@ -23,7 +23,7 @@ public class ChristmasDiscountEventTest {
 
     @Test
     @DisplayName("25일 지나면 할인 조건을 만족하지 못한다.")
-    void Temp() {
+    void ChristmasDayOverCase() {
         Date date = Date.of(CHRISTMAS_DAY + 1);
         Assertions.assertFalse(event.checkCondition(date));
     }
