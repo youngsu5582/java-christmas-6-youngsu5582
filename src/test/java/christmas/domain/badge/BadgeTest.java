@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas.domain.badge;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
