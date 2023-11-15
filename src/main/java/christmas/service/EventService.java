@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import christmas.domain.date.Date;
-import christmas.domain.event.EventList;
+import christmas.domain.event.InProgressEventList;
 import christmas.domain.reward.Reward;
 import christmas.domain.order.Bill;
 
@@ -24,10 +24,10 @@ import christmas.lib.event.PresentEvent;
 import static christmas.constant.EventConstant.EVENT_THRESHOLD_PRICE;
 
 public class EventService {
-    private final EventList eventList;
+    private final InProgressEventList eventList;
 
     public EventService() {
-        eventList = EventList.of(EventFactory.getEventList());
+        eventList = InProgressEventList.of(EventFactory.getEventList());
     }
 
     public Reward createReward(Date date, Bill bill) {

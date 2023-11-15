@@ -7,9 +7,9 @@ import christmas.lib.event.PresentEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public record EventList(List<DiscountEvent> discountEventList,
-                        List<PresentEvent> presentEventList) {
-    public static EventList of(List<Event> eventList) {
+public record InProgressEventList(List<DiscountEvent> discountEventList,
+                                  List<PresentEvent> presentEventList) {
+    public static InProgressEventList of(List<Event> eventList) {
         List<DiscountEvent> discountEventList = new ArrayList<>();
         List<PresentEvent> presentEventList = new ArrayList<>();
         for (Event event : eventList) {
@@ -20,6 +20,6 @@ public record EventList(List<DiscountEvent> discountEventList,
                 presentEventList.add((PresentEvent) event);
             }
         }
-        return new EventList(discountEventList, presentEventList);
+        return new InProgressEventList(discountEventList, presentEventList);
     }
 }
