@@ -1,7 +1,11 @@
 package christmas;
 
+import christmas.controller.GameController;
+import christmas.factory.ControllerFactory;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        GameController gameController = ControllerFactory.getGameController();
+        gameController.run();
     }
 }
